@@ -5,6 +5,24 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+    <!--配置自定义编码filter-->
+    <!--<filter>-->
+    <!--  <filter-name>charset</filter-name>-->
+    <!--  <filter-class>com.yuanfang.filter.CharacterEncodingFilter</filter-class>-->
+    <!--</filter>-->
+  <filter>
+    <filter-name>charset</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>charset</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
     <!--配置springmvc核心servlet-->
     <servlet>
       <servlet-name>springmvc</servlet-name>
