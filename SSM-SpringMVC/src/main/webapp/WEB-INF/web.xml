@@ -14,7 +14,6 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring.xml</param-value>
   </context-param>
-  
   <!--配置springmvc核心servlet-->
   <servlet>
     <servlet-name>springmvc</servlet-name>
@@ -28,8 +27,7 @@
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
-  <!--配置post请求参数的中文乱码问题-->
+  <!--配置解决post请求中文乱码-->
   <filter>
     <filter-name>charset</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -42,6 +40,5 @@
     <filter-name>charset</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
 
 </web-app>
