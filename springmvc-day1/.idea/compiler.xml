@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springmvc-day1" />
         <module name="SSM-SpringMVC" />
+        <module name="springmvc-day2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springmvc-day1" target="8" />
+      <module name="springmvc-day2" target="1.8" />
       <module name="SSM-SpringMVC" target="1.8" />
     </bytecodeTargetLevel>
   </component>
