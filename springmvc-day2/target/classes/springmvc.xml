@@ -14,9 +14,26 @@
         <property name="prefix" value="/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--配置静态资源拦截-->
+    <mvc:default-servlet-handler/>
     <!--配置文件上传解析器:id写死为multipartResolver-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!--注入文件上传大小限制 单位：字节 2M=2097150 默认：没有限制-->
         <property name="maxUploadSize" value="2097150" />
     </bean>
+
+    <!--注册拦截器-->
+    <bean id="myInterceptor" class="com.yuanfang.interceptors.MyInterceptor"/>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--配置拦截的请求路径-->
+            <mvc:mapping path="/json/*"/>
+            <!--配置不被拦截的请求路径-->
+            <mvc:exclude-mapping path="/"/>
+            <!--使用的拦截器-->
+            <ref bean="myInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
