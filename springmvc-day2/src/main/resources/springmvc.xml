@@ -36,4 +36,7 @@
             <ref bean="myInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!--配置全局异常-->
+    <bean class="com.yuanfang.handlerxception.GlobalExceptionResolver"/>
 </beans>
